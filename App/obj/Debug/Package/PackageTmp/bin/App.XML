@@ -1,0 +1,969 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>App</name>
+    </assembly>
+    <members>
+        <member name="M:App.NinjectWebCommon.Start">
+            <summary> Starts the application </summary>
+        </member>
+        <member name="M:App.NinjectWebCommon.Stop">
+            <summary> Stops the application. </summary>
+        </member>
+        <member name="M:App.NinjectWebCommon.CreateKernel">
+            <summary> Creates the kernel that will manage your application. </summary>
+            <returns>The created kernel.</returns>
+        </member>
+        <member name="M:App.NinjectWebCommon.RegisterServices(Ninject.IKernel)">
+            <summary> Load your modules or register your services here! </summary>
+            <param name="kernel">The kernel.</param>
+        </member>
+        <member name="M:App.Controllers.Core.PaymentTransferController.AcceptTransfer(System.Int64)">
+            <summary> Принятие перевода денег </summary>
+        </member>
+        <member name="M:App.Controllers.Core.PaymentTransferController.DeclineTransfer(System.Int64)">
+            <summary> Принятие перевода денег </summary>
+        </member>
+        <member name="M:App.Controllers.Core.PaymentTransferController.RollbackTransfer(System.Int64)">
+            <summary> Отмена перевода денег </summary>
+        </member>
+        <member name="M:App.Controllers.Core.PaymentTransferController.GetDefaultValues(App.DataLayer.Filters.BaseParams)">
+            <summary> Получить значения по умолчанию </summary>
+        </member>
+        <member name="T:App.Controllers.Core.MenuItemsController">
+            <summary> Контроллер регистрации пунктов меню </summary>
+        </member>
+        <member name="M:App.Controllers.Core.OperatorController.GetCurrent">
+            <summary>
+            Получить текущего оператора
+            </summary>
+        </member>
+        <member name="M:App.Controllers.Core.OperatorController.RemoveCurrentAccount">
+            <summary>
+            Получить текущего оператора
+            </summary>
+        </member>
+        <member name="M:App.Controllers.Core.OperatorController.GetCurrentOperatorSurnameAndName">
+            <summary> Получить Фамилию и Имя оператора </summary>
+        </member>
+        <member name="M:App.Controllers.Core.OperatorController.BalanceHistory(App.DataLayer.Filters.BaseParams)">
+            <summary> Список всех элементов в таблице </summary>
+        </member>
+        <member name="T:App.Controllers.Core.BaseCrudViewController`2">
+            <summary> Базовый Controller </summary>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.List(App.DataLayer.Filters.BaseParams)">
+            <summary> Список всех элементов в таблице </summary>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.TreeList(App.DataLayer.Filters.BaseParams)">
+            <summary> Дерево всех элементов в таблице </summary>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.Get(System.Int64)">
+            <summary> Выдать элемент по id </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.Save(`1)">
+            <summary> Сохранить элемент в таблице </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.Delete(App.DataLayer.Filters.BaseParams)">
+            <summary> Удаление из базы </summary>
+            <param name="ids"></param>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.Edit(`1)">
+            <summary> Изменение элемента в базе </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:App.Controllers.Core.BaseCrudViewController`2.GetErrorPage(System.Exception)">
+            <summary>
+            Оборачиваем ошибку в html страницу
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:App.DataLayer.DataService.Implementation.BaseDataService`2">
+            <summary> Базовая реализация интерфейса IDataService </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.Implementation.PaymentDataService.Create(App.Models.App.PaymentDTO)">
+            <summary>
+            Пополнить баланс пользователя
+            </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.Implementation.OperatorDataService.GetCurrent">
+            <summary>
+            Получить текущего оператора
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:App.DataLayer.DataService.Implementation.OperatorDataService.RemoveCurrentAccount">
+            <summary>
+            Удаляем свой аккаунт
+            </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.Implementation.OperatorDataService.FavoriteOperator(System.Int64)">
+            <summary>
+            Метод добавления/удаление избранных пользователей
+            </summary>
+            <param name="favoriteId"></param>
+        </member>
+        <member name="T:App.DataLayer.DataService.IDataService`2">
+            <summary> Базовый интерфейс IDataService </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.IDataService`2.List(App.DataLayer.Filters.BaseParams)">
+            <summary> Получить список объектов </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.IDataService`2.TreeList(App.DataLayer.Filters.BaseParams)">
+            <summary> Получить древовидный список объектов </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.IDataService`2.Get(System.Int64)">
+            <summary> Получить сущность по id </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.IDataService`2.Create(`1)">
+            <summary> Создать сущность </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.IDataService`2.Update(`1)">
+            <summary> Обновить сущность </summary>
+        </member>
+        <member name="M:App.DataLayer.DataService.IDataService`2.Delete(System.Int64)">
+            <summary> Удалить сущность по id </summary>
+        </member>
+        <member name="T:App.DataLayer.Extension.ObjectParseExtention">
+            <summary> Набор методов-расширений для распарсивания объектов. </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.To``1(System.Object)">
+            <summary>
+            Приводит <paramref name="obj"/> к типу <typeparamref name="T"/>.
+            Если не удалось, то возвращается default(<typeparamref name="T"/>).
+            </summary>
+            <typeparam name="T">
+            Тип, к которому приводится объект.
+            </typeparam>
+            <param name="obj">
+            Объект.
+            </param>
+            <returns>
+            Приведенное значение.
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.To``1(System.Object,``0)">
+            <summary>
+            Приводит <paramref name="obj"/> к типу <typeparamref name="T"/>.
+            Если не удалось, то возвращается <paramref name="defaultValue"/>.
+            </summary>
+            <typeparam name="T">
+            Тип, к которому приводится объект.
+            </typeparam>
+            <param name="obj">
+            Объект.
+            </param>
+            <param name="defaultValue">
+            Дефолтное значение.
+            </param>
+            <returns>
+            Приведенное значение.
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToBool(System.Object)">
+            <summary>
+            Приводит объект к типу bool.
+            Возвращает true для строки "true".
+            Возвращает true для целого числа (int, long) отличного от нуля.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <returns>
+            Приведенное значение. 
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToDateTime(System.Object)">
+            <summary>
+            Приводит объект к типу DateTime.
+            Если не удалось, возвращает DateTime.MinValue.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToDateTimeNullable(System.Object,System.Nullable{System.DateTime})">
+            <summary>
+            Приводит объект к типу DateTime.
+            Если не удалось, возвращает DateTime.MinValue.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <param name="defaultValue">
+            Значение, возвращаемое, если не удалось выполнить преобразование.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToDecimal(System.Object)">
+            <summary>
+            Приводит объект к типу decimal.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToDouble(System.Object)">
+            <summary>
+            Приводит объект к типу double.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToLong(System.Object,System.Int64)">
+            <summary>
+            Приводит объект к типу long.
+            Для true возвращает defaultValue.
+            </summary>
+            <param name="obj">
+            Объект.
+            </param>
+            <param name="defaultValue">
+            Значение, возвращаемое, если не удалось выполнить преобразование. 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToLong(System.Object)">
+            <summary>
+            Приводит объект к типу long.
+            Для true возвращает 1.
+            </summary>
+            <param name="obj">
+            Объект.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToLongNullable(System.Object,System.Nullable{System.Int64})">
+            <summary>
+            Приводит объект к типу long?.
+            Для true возвращает 1.
+            </summary>
+            <param name="obj">
+            Объект.
+            </param>
+            <param name="defaultValue">Значение по умолчанию</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToInt(System.Object,System.Int32)">
+            <summary>
+            Приводит объект к типу int.
+            Для true возвращает defaultValue.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <param name="defaultValue">
+            Значение, возвращаемое, если не удалось выполнить преобразование.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToInt(System.Object)">
+            <summary>
+            Приводит объект к типу int.
+            Для true возвращает 1.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToIntNullable(System.Object,System.Nullable{System.Int32})">
+            <summary>
+            Приводит объект к типу int?.
+            Для true возвращает defaultValue.
+            </summary>
+            <param name="obj">
+            Объект. 
+            </param>
+            <param name="defaultValue">
+            Значение, возвращаемое, если не удалось выполнить преобразование.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToStr(System.Object)">
+            <summary>
+            Приводит объект к типу string.
+            Если объект равен null, то возвращает пустую строку.
+            </summary>
+            <param name="obj">
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToEnum``1(System.Object,``0,System.Type)">
+            <summary>
+            Приведение объекта к типу перечисления.
+            Работает, если базовый тип перечисления int
+            и объект имеет тип int, long, string или decimal,
+            иначе InvalidOperationException.
+            </summary>
+            <typeparam name="T">Тип, представляющий собой перречисление.</typeparam>
+            <param name="obj"></param>
+            <param name="defaultValue">Значение, возвращаемое, если преобразование не удалось.</param>
+            <param name="type">Тип, лежащий в основе перечисления.
+            Если перечисление не Nullable, то тип самого перечисления. 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToLongArray(System.Object)">
+            <summary> Парсинг объекта JSON в массив long элементов </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.ObjectParseExtention.ToListLong(System.String)">
+            <summary> Парсинг строки в список long элементов </summary>
+        </member>
+        <member name="T:App.DataLayer.Extension.CommonExtension">
+            <summary> Класс общих расширений, используемых по всему проекту </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.CommonExtension.GetHashMD5(System.IO.Stream)">
+            <summary> Получить контрольную сумму файла из потока по алгоритму MD5 </summary>
+        </member>
+        <member name="P:App.DataLayer.Extension.CommonExtension.PasswordStrindForDisplay">
+            <summary> Пароль для отображения по умолчанию </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.CommonExtension.IsPasswordValid(System.String)">
+            <summary> Валидация пароля </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.CommonExtension.EncryptPassword(System.String)">
+            <summary> Получить зашифрованный пароль(hash) из незашифрованного пароля </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.CommonExtension.GetDisplayAttributeName(System.Enum)">
+            <summary> Получить значение Name из DisplayAttribute перечисления </summary>
+        </member>
+        <member name="T:App.DataLayer.Extension.Export.IExportListToCSV`1">
+            <summary> Сервис экспорта ViewModel в CSV </summary>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.OrderIf``2(System.Linq.IQueryable{``0},System.Boolean,System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary> Условная сортировка последовательности. </summary>
+            <param name="query"> </param>
+            <param name="condition"> Проводить или нет сортировку.  </param>
+            <param name="acs"> Сортировать по возрастанию или убыванию.  </param>
+            <param name="keySelector"> Выражение для вычисления ключа.  </param>
+            <typeparam name="T"> Тип элементов последовательности. </typeparam>
+            <typeparam name="TKey"> Тип ключей. </typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.OrderThenIf``2(System.Linq.IQueryable{``0},System.Boolean,System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary> Дополнительная условная сортировка последовательности. </summary>
+            <param name="query"> </param>
+            <param name="condition"> Проводить или нет сортировку.  </param>
+            <param name="acs"> Сортировать по возрастанию или убыванию.  </param>
+            <param name="keySelector"> Выражение для вычисления ключа.  </param>
+            <typeparam name="T"> Тип элементов последовательности. </typeparam>
+            <typeparam name="TKey"> Тип ключей. </typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.WhereIf``1(System.Linq.IQueryable{``0},System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary> Условная фильтрация последовательности. </summary>
+            <param name="query"> </param>
+            <param name="condition"> Проводить или нет фильтрацию.  </param>
+            <param name="predicate"> Предикат для отбора элементов.  </param>
+            <typeparam name="T"> Тип элементов последовательности. </typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.WhereIfElse``1(System.Linq.IQueryable{``0},System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>Условная фильтрация последовательности</summary>
+            <typeparam name="T">Тип элементов последовательности</typeparam>
+            <param name="query">Запрос</param>
+            <param name="condition">Проводить или нет фильтрацию</param>
+            <param name="predicateIfTrue">Предикат для отбора элементов true</param>
+            <param name="predicateIfFalse">Предикат для отбора элементов false</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.In``1(``0,``0[])">
+            <summary> Принадлежит ли элемент массиву. Если элемент равен null, возвращается false. </summary>
+            <param name="value"></param>
+            <param name="values"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.In``1(``0,System.Linq.IQueryable{``0})">
+            <summary> Принадлежит ли элемент последовательности. Если элемент равен null, возвращается false. </summary>
+            <param name="value"></param>
+            <param name="values"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.In``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary> Принадлежит ли элемент последовательности. Если элемент равен null, возвращается false. </summary>
+            <param name="value"></param>
+            <param name="values"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.NotIn``1(``0,``0[])">
+            <summary> Проверяет не принадлежит ли элемент массиву. Если элемент или коллекция равны null, возвращается true. </summary>
+            <param name="value"></param>
+            <param name="values"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.NotIn``1(``0,System.Linq.IQueryable{``0})">
+            <summary> Проверяет не принадлежит ли элемент последовательности. Если элемент или коллекция равны null, возвращается true. </summary>
+            <param name="value"></param>
+            <param name="values"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:App.DataLayer.Extension.StoreDataExtension.NotIn``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary> Проверяет не принадлежит ли элемент последовательности. Если элемент или коллекция равны null, возвращается true. </summary>
+            <param name="value"></param>
+            <param name="values"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.GetAll``1">
+            <summary> Получить список объектов (без удалённых) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.GetAllWithDeleted``1">
+            <summary> Получить список объектов (с удалёнными) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.GetAllOnlyDeleted``1">
+            <summary> Получить список только удалённых объектов </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Get``1(System.Int64)">
+            <summary> Получить сущность по id </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Create``1(``0)">
+            <summary> Создать сущность </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Create``1(System.Collections.Generic.List{``0})">
+            <summary> Создать список сущностей </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Update``1(``0)">
+            <summary> Обновить сущность </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Update``1(System.Collections.Generic.List{``0})">
+            <summary> Обновить список сущностей </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Delete``1(System.Int64)">
+            <summary> Удалить сущность по id (Мягкое удаление (IsDeleted = 1), Базовая реализация (в DataStore) с логированием) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.DeleteCompletely``1(System.Int64)">
+            <summary> Удалить сущность по id из БД навсегда (Базовая реализация (в DataStore) без логирования) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.IDataStore.Save">
+            <summary> Сохранение изменений </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.GetAll``1">
+            <summary> Получить список неудаленных  </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.GetAllWithDeleted``1">
+            <summary> Получить список объектов (с удалёнными) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.GetAllOnlyDeleted``1">
+            <summary> Получить список только удалённых объектов </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Get``1(System.Int64)">
+            <summary> 
+            Получить сущность по id.
+            Обнаруживает сущность с указанными значениями первичного ключа.
+            Если сущность с указанными значениями первичного ключа содержится в контексте, 
+            она возвращается немедленно без выполнения запроса к хранилищу.
+            В противном случае выполняется запрос к хранилищу в поисках сущности с указанными значениями первичного ключа. 
+            Если такая сущность обнаружена, она добавляется к контексту и возвращается вызывающей стороне.
+            Если сущность не обнаружена в контексте или в хранилище, возвращается значение NULL. 
+            </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Create``1(``0)">
+            <summary> Создать сущность </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Create``1(System.Collections.Generic.List{``0})">
+            <summary> Создать список сущностей </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Update``1(``0)">
+            <summary> Обновить сущность </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Update``1(System.Collections.Generic.List{``0})">
+            <summary> Обновить список сущностей </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Delete``1(System.Int64)">
+            <summary> Удалить сущность по id (Мягкое удаление (IsDeleted = 1), реализация с логированием) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.DeleteCompletely``1(System.Int64)">
+            <summary> Удалить сущность по id из БД навсегда (реализация без логирования) </summary>
+        </member>
+        <member name="M:App.DataLayer.Repository.DataStore.Save">
+            <summary> Сохранение изменений </summary>
+        </member>
+        <member name="T:App.DataLayer.Filters.BaseParams">
+            <summary> Базовые параметры запроса. </summary>
+        </member>
+        <member name="P:App.DataLayer.Filters.BaseParams.Params">
+            <summary> Динамический словарь для параметров. </summary>
+        </member>
+        <member name="P:App.Models.App.MessageDTO.OperatorFrom">
+            <summary> Кто отправил </summary>
+        </member>
+        <member name="P:App.Models.App.MessageDTO.OperatorTo">
+            <summary> Кому отправил </summary>
+        </member>
+        <member name="P:App.Models.App.MessageDTO.Text">
+            <summary> Текст сообщения </summary>
+        </member>
+        <member name="T:App.Models.App.PaymentDTO">
+            <summary>
+            Денежная оплата
+            </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentDTO.OperatorFrom">
+            <summary> Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentDTO.OperatorTo">
+            <summary> Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentDTO.Amount">
+            <summary>
+            Сумма перевода
+            </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentDTO.Date">
+            <summary>
+            Дата операции
+            </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentDTO.Type">
+            <summary>
+            Тип
+            </summary>
+        </member>
+        <member name="T:App.Models.App.PaymentTransferDTO">
+            <summary>
+            Операция по переводу денег
+            </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.PaymentFrom">
+            <summary> Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.PaymentTo">
+            <summary> Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.OperatorFrom">
+            <summary> Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.OperatorTo">
+            <summary> Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.AmountFrom">
+            <summary> Сумма перевода (с учетом коммисии)</summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.AmountTo">
+            <summary> Сумма перевода (получателю) </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.Comission">
+            <summary> Комиссия перевода </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.Text">
+            <summary> Текст к переводу </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransferDTO.Decision">
+            <summary> Решение </summary>
+        </member>
+        <member name="T:App.Models.App.FavoriteOperator">
+            <summary>
+            Избранные пользователи
+            </summary>
+        </member>
+        <member name="P:App.Models.App.FavoriteOperator.OperatorFrom">
+            <summary> Кто избранный </summary>
+        </member>
+        <member name="P:App.Models.App.FavoriteOperator.OperatorFromId">
+            <summary> Id Кто избранный </summary>
+        </member>
+        <member name="P:App.Models.App.FavoriteOperator.OperatorTo">
+            <summary> Кому избранный </summary>
+        </member>
+        <member name="P:App.Models.App.FavoriteOperator.OperatorToId">
+            <summary> Id Кому избранный </summary>
+        </member>
+        <member name="T:App.Models.App.Message">
+            <summary>
+            Сообщения
+            </summary>
+        </member>
+        <member name="P:App.Models.App.Message.OperatorFrom">
+            <summary> Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.Message.OperatorFromId">
+            <summary> Id Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.Message.OperatorTo">
+            <summary> Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.Message.OperatorToId">
+            <summary> Id Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.Message.Text">
+            <summary> Текст сообщения </summary>
+        </member>
+        <member name="P:App.Models.App.Message.CorrespondenceId">
+            <summary> Id переписки </summary>
+        </member>
+        <member name="T:App.Models.App.Payment">
+            <summary>
+            Денежная оплата
+            </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.OperatorBalance">
+            <summary> Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.OperatorBalanceId">
+            <summary> Id Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.OperatorFrom">
+            <summary> Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.OperatorFromId">
+            <summary> Id Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.OperatorTo">
+            <summary> Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.OperatorToId">
+            <summary> Id Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.Amount">
+            <summary>
+            Сумма перевода
+            </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.Date">
+            <summary>
+            Дата операции
+            </summary>
+        </member>
+        <member name="P:App.Models.App.Payment.Type">
+            <summary>
+            Тип
+            </summary>
+        </member>
+        <member name="T:App.Models.App.PaymentTransfer">
+            <summary>
+            Операция по переводу денег
+            </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.PaymentFrom">
+            <summary> Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.PaymentFromId">
+            <summary> Id Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.PaymentTo">
+            <summary> Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.PaymentToId">
+            <summary> Id Баланс </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.OperatorFrom">
+            <summary> Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.OperatorFromId">
+            <summary> Id Кто перевел </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.OperatorTo">
+            <summary> Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.OperatorToId">
+            <summary> Id Кому перевели </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.AmountFrom">
+            <summary> Сумма перевода (с учетом коммисии)</summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.AmountTo">
+            <summary> Сумма перевода (получателю) </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.Comission">
+            <summary> Комиссия перевода </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.Decision">
+            <summary> Решение </summary>
+        </member>
+        <member name="P:App.Models.App.PaymentTransfer.CorrespondenceId">
+            <summary> Id переписки </summary>
+        </member>
+        <member name="T:App.Models.App.OperatorBalance">
+            <summary>
+            Баланс пользователя
+            </summary>
+        </member>
+        <member name="P:App.Models.App.OperatorBalance.Operator">
+            <summary> Пользователь </summary>
+        </member>
+        <member name="P:App.Models.App.OperatorBalance.OperatorId">
+            <summary> Id пользователя </summary>
+        </member>
+        <member name="P:App.Models.App.OperatorBalance.IsCurrent">
+            <summary>
+            Текущий баланс
+            </summary>
+        </member>
+        <member name="P:App.Models.App.OperatorBalance.Amount">
+            <summary>
+            Сумма
+            </summary>
+        </member>
+        <member name="P:App.Models.App.OperatorBalance.DateFrom">
+            <summary>
+            Действует с
+            </summary>
+        </member>
+        <member name="P:App.Models.App.OperatorBalance.DateTo">
+            <summary>
+            Действует по
+            </summary>
+        </member>
+        <member name="T:App.Models.Core.YesOrNo">
+            <summary> Да или Нет </summary>
+        </member>
+        <member name="T:App.Models.Core.Month">
+            <summary> Месяца </summary>
+        </member>
+        <member name="T:App.Models.Core.Operator">
+            <summary> Оператор </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.Surname">
+            <summary> Фамилия </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.Patronymic">
+            <summary> Отчество </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.Email">
+            <summary> E-mail </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.Phone">
+            <summary> Телефон </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.User">
+            <summary> Пользователь </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.UserId">
+            <summary> Id Пользователь </summary>
+        </member>
+        <member name="P:App.Models.Core.Operator.Status">
+            <summary> Статус Пользователь </summary>
+        </member>
+        <member name="M:App.Models.Core.Operator.GetSurnameAndName">
+            <summary> Получить Фамилию и Имя оператора </summary>
+        </member>
+        <member name="T:App.Models.Core.OperatorStatus">
+            <summary> Статус Пользователь </summary>
+        </member>
+        <member name="T:App.Models.Core.BaseEntity">
+            <summary> Базовая сущность (Id, Name, ObjectCreateDate, ObjectEditDate, Version, IsDeleted) </summary>
+        </member>
+        <member name="P:App.Models.Core.BaseEntity.Name">
+            <summary> Наименование </summary>
+        </member>
+        <member name="T:App.Models.Core.PersistentEntity">
+            <summary> Базовая сущность (Id, ObjectCreateDate, ObjectEditDate, Version, IsDeleted) </summary>
+        </member>
+        <member name="P:App.Models.Core.PersistentEntity.Id">
+            <summary> Идентификатор </summary>
+        </member>
+        <member name="P:App.Models.Core.PersistentEntity.ObjectCreateDate">
+            <summary> Дата создания </summary>
+        </member>
+        <member name="P:App.Models.Core.PersistentEntity.ObjectEditDate">
+            <summary> Дата изменения </summary>
+        </member>
+        <member name="P:App.Models.Core.PersistentEntity.Version">
+            <summary> Версия </summary>
+        </member>
+        <member name="P:App.Models.Core.PersistentEntity.IsDeleted">
+            <summary> Удалено? (1 - удалено, 0 - не удалено) </summary>
+        </member>
+        <member name="T:App.Models.Core.Role">
+            <summary> Роль </summary>
+        </member>
+        <member name="T:App.Models.Core.User">
+            <summary> Пользователь </summary>
+        </member>
+        <member name="P:App.Models.Core.User.Login">
+            <summary> Логин </summary>
+        </member>
+        <member name="P:App.Models.Core.User.Password">
+            <summary> Пароль </summary>
+        </member>
+        <member name="T:App.Models.Core.UserRole">
+            <summary> Роль пользователя </summary>
+        </member>
+        <member name="P:App.Models.Core.UserRole.User">
+            <summary> Пользователь </summary>
+        </member>
+        <member name="P:App.Models.Core.UserRole.UserId">
+            <summary> Id пользователя </summary>
+        </member>
+        <member name="P:App.Models.Core.UserRole.Role">
+            <summary> Роль </summary>
+        </member>
+        <member name="P:App.Models.Core.UserRole.RoleId">
+            <summary> Id роли </summary>
+        </member>
+        <member name="T:App.DTO.Core.OperatorDTO">
+            <summary> Оператор DTO </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Login">
+            <summary>  Логин </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Password">
+            <summary>  Пароль </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Email">
+            <summary> E-mail </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Phone">
+            <summary> Телефон </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Surname">
+            <summary>  Фамилия </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Patronymic">
+            <summary>  Отчество </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Roles">
+            <summary> Роли </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.RolesStr">
+            <summary> Роли строкой </summary>
+        </member>
+        <member name="P:App.DTO.Core.OperatorDTO.Status">
+            <summary> Статус Пользователь </summary>
+        </member>
+        <member name="T:App.DTO.Core.HasIdDTO">
+            <summary> Базовый класс (Id) </summary>
+        </member>
+        <member name="P:App.DTO.Core.HasIdDTO.Id">
+            <summary> Id </summary>
+        </member>
+        <member name="T:App.DTO.Core.RoleDTO">
+            <summary> Роль </summary>
+        </member>
+        <member name="T:App.DTO.Enums.YesNoEnum">
+            <summary> Перечисление Да/Нет </summary>
+        </member>
+        <member name="T:App.DTO.Services.BalanceOperationMoneyChangeDTO">
+            <summary>
+            Класс для аргументов смены значения баланса
+            </summary>
+        </member>
+        <member name="P:App.DTO.Services.BalanceOperationMoneyChangeDTO.Amount">
+            <summary>
+            Сумма
+            </summary>
+        </member>
+        <member name="P:App.DTO.Services.BalanceOperationMoneyChangeDTO.Type">
+            <summary>
+            Тип изменения баланса/оплаты
+            </summary>
+        </member>
+        <member name="P:App.DTO.Services.BalanceOperationMoneyChangeDTO.BalanceOwnerOperatorId">
+            <summary>
+             У кого меняем баланс
+            </summary>
+        </member>
+        <member name="P:App.DTO.Services.BalanceOperationMoneyChangeDTO.AcceptOperatorId">
+            <summary>
+             Кому пришло
+            </summary>
+        </member>
+        <member name="P:App.DTO.Services.BalanceOperationMoneyChangeDTO.ReciveOperatorId">
+            <summary>
+             От кого пришло
+            </summary>
+        </member>
+        <member name="T:App.Map.AutoMapperMap.CustomProfile">
+            <summary> Provides a named configuration for maps. Naming conventions become scoped per profile. </summary>
+        </member>
+        <member name="P:App.Security.IAuthentication.HttpContext">
+            <summary> Конекст (тут мы получаем доступ к запросу и кукисам) </summary>
+        </member>
+        <member name="T:App.Services.Balance.BalanceOperationService">
+            <summary>
+            Сервис работы с балансом пользователя
+            </summary>
+        </member>
+        <member name="M:App.Services.Balance.BalanceOperationService.AddMoneyToOwnAccount(System.Decimal)">
+            <summary>
+            Метод пополнения счета пользователя
+            </summary>
+            <param name="amount"></param>
+        </member>
+        <member name="M:App.Services.Balance.BalanceOperationService.ChangeMoneyToOwnAccount(App.DTO.Services.BalanceOperationMoneyChangeDTO)">
+            <summary>
+            Метод пополнения счета пользователя
+            </summary>
+        </member>
+        <member name="T:App.Services.Message.IMessageSender">
+            <summary>
+            Сервси отправки писем
+            </summary>
+        </member>
+        <member name="M:App.Services.Message.IMessageSender.SendNewMail(System.Int64,System.Int64,System.String,System.String)">
+            <summary>
+            Отправить новое собщение с новой перепиской
+            </summary>
+        </member>
+        <member name="M:App.Services.Message.IMessageSender.SendMail(System.Guid,System.Int64,System.Int64,System.String,System.String)">
+            <summary>
+            Отправить новое собщение
+            </summary>
+        </member>
+        <member name="T:App.Services.Message.MessageSender">
+            <summary>
+            Отправка сообщения внутри системы
+            </summary>
+        </member>
+        <member name="M:App.Services.Message.MessageSender.SendMail(System.Guid,System.Int64,System.Int64,System.String,System.String)">
+            <summary>
+            Отправить новое собщение с новой перепиской
+            </summary>
+            <param name="operatorFromId"></param>
+            <param name="operatorToId"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Services.Message.MessageSender.SendNewMail(System.Int64,System.Int64,System.String,System.String)">
+            <summary>
+            Отправить новое собщение с новой перепиской
+            </summary>
+            <param name="operatorFromId"></param>
+            <param name="operatorToId"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:App.Services.Payment.PaymentTransferOperationService">
+            <summary>
+            Сервис работы с переводами денег
+            </summary>
+        </member>
+        <member name="M:App.Services.Payment.PaymentTransferOperationService.CreateNewTransfer(App.Models.App.PaymentTransferDTO)">
+            <summary>
+            Создание нового перевода
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Services.Payment.PaymentTransferOperationService.RollbackTransfer(System.Int64)">
+            <summary>
+            Отменить перевод
+            </summary>
+            <param name="transferId"></param>
+        </member>
+        <member name="M:App.Services.Payment.PaymentTransferOperationService.DeclineTransfer(System.Int64)">
+            <summary>
+            Отказ от получения перевода
+            </summary>
+            <param name="transferId"></param>
+        </member>
+        <member name="M:App.Services.Payment.PaymentTransferOperationService.AcceptTransfer(System.Int64)">
+            <summary>
+            Принятие получения перевода
+            </summary>
+            <param name="transferId"></param>
+        </member>
+    </members>
+</doc>

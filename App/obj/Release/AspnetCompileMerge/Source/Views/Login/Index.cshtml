@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "MTransfer";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+@section featured {
+    <div class="wrapper">
+        <form class="form-signin" action="/Login/Index" method="POST">
+            <div class="row" style="text-align:  center;">
+                <h3 class="form-signin-heading"><b>Авторизация</b></h3>
+            </div>
+            <input type="text" class="form-control" name="login" placeholder="Логин" required="" autofocus="" />
+            <br>
+            <input type="password" class="form-control" name="password" placeholder="Пароль" required="" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+            <button class="btn btn-lg btn-link btn-block" id="registerBtn" type="button">Зарегестрироваться</button>
+            <p></p><p></p>
+            <p style="text-align:center; color:red;">@ViewBag.ErrorMessage</p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("registerBtn").onclick = function () {
+            location.href = "/Login/Register";
+        };
+    </script>
+}

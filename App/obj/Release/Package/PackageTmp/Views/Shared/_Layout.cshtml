@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    @*<link rel="stylesheet" type="text/css" media="screen, projection, print" href="~/resources/extjs-themes/theme-classic/resources/theme-classic-all.css" />*@
+    @*<link rel="stylesheet" type="text/css" media="screen, projection, print" href="~/resources/extjs-themes/theme-gray/resources/theme-gray-all.css" />*@
+    @*<link rel="stylesheet" type="text/css" media="screen, projection, print" href="~/resources/extjs-themes/theme-crisp/resources/theme-crisp-all.css" />*@
+    <link rel="stylesheet" type="text/css" media="screen, projection, print" href="~/resources/extjs-themes/theme-neptune/resources/theme-neptune-all.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen, projection, print" href="~/resources/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="~/resources/css/main.css">
+
+    @*TODO: не получается вынести css класс .different-values в какой-либо-файл.css - не применяется :( *@
+    <style>
+        .different-values .x-grid-cell {
+            background-color: #7BF679 !important;
+        }
+    </style>
+
+    <title>MTransfer</title>
+</head>
+<body>
+@RenderBody()
+    <script> 
+        var Ext = Ext || {};
+        Ext.manifest = { // the same content as "app.json"
+            compatibility: {
+                ext: '4.2'
+            }
+        }
+    </script>
+    <script src="../../js/ext/ext-all-debug.js"></script>
+    <script src="../../js/ext/locale-ru-debug.js"></script>
+
+    <script src="../../js/ext/ux/ExtendComponents.js"></script>
+    <script src="../../js/ext/ux/Clear.js"></script>
+    <script src="../../js/ext/ux/Overrides.js"></script>
+    <script src="../../js/ext/ux/grid/Summary.js"></script>
+    <script src="../../js/ext/ux/form/field/ClearButton.js"></script>
+    <script src="../../js/ext/ux/form/field/OperatorButton.js"></script>
+    <script src="../../js/ext/ux/grid/column/ActionPro.js"></script>
+    <script src="../../js/ext/ux/grid/FilterBar.js"></script>
+    <script src="../../js/ext/ux/grid/AutoResizer.js"></script>
+    <script src="../../js/ext/ux/form/field/SelectField.js"></script>
+    <script src="../../js/ext/ux/grid/SelectFieldGrid.js"></script>
+    <script src="../../js/ext/ux/grid/PagingToolbar.js"></script>
+
+    <script src="../../js/Application/app-production.js"></script>
+    @*<script src="../../js/Application/app.js"></script>*@
+
+</body>
+</html>
