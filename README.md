@@ -1,2 +1,2 @@
-# App
-ExtJs6 + Asp .NET MVC
+#MTransfer App
+Sample app based on ExtJs6 + Asp .NET MVC
