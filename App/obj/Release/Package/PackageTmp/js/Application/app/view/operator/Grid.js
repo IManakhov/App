@@ -18,7 +18,6 @@
             columns: this.columns || [
                 {
                     xtype: 'actioncolumn',
-                    id: 'actionColumnFavorites',
                     width: 40,
                     items:
                     [{

@@ -2432,7 +2432,6 @@ Ext.define('App.view.operator.Grid', {
             columns: this.columns || [
                 {
                     xtype: 'actioncolumn',
-                    id: 'actionColumnFavorites',
                     width: 40,
                     items:
                     [{
@@ -2787,7 +2786,6 @@ Ext.define('App.view.message.Window', {
                     columns: [
                         {
                             xtype: 'actioncolumn',
-                            id: 'actionColumnFavorites',
                             width: 40,
                             items:
                             [{
@@ -3014,7 +3012,8 @@ Ext.define('App.view.payment.Window', {
                 {
                     xtype: 'numberfield',
                     fieldLabel: 'Сумма',
-                    name: 'Amount'
+                    name: 'Amount',
+                    minValue: 0,
                 }
             ]
         }
@@ -3079,7 +3078,6 @@ Ext.define('App.view.paymenttransfer.Window', {
                     columns: [
                         {
                             xtype: 'actioncolumn',
-                            id: 'actionColumnFavorites',
                             width: 40,
                             items:
                             [{

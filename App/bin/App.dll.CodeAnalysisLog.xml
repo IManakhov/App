@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
-  <Target Name="D:\Bitbucket\moneytransferapp\moneytransfer_app\App\bin\App.dll">
+  <Target Name="D:\GitHub\App\App\bin\App.dll">
    <Modules>
     <Module Name="app.dll">
      <Namespaces>
@@ -10,7 +10,7 @@
        <Types>
         <Type Name="NinjectDependencyResolver" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-04-24 17:44:20Z" FixCategory="DependsOnFix">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-05-02 05:59:01Z" FixCategory="DependsOnFix">
            <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Реализуйте IDisposable для 'NinjectDependencyResolver', поскольку он создает члены следующих типов IDisposable: 'StandardKernel'. Если 'NinjectDependencyResolver' ранее был доставлен, добавление в данный тип новых членов, реализующих IDisposable, считается критическим изменением для существующих потребителей.</Issue>
           </Message>
          </Messages>
@@ -23,8 +23,8 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-04-24 17:44:20Z" FixCategory="Breaking">
-             <Issue Name="DisposeBoolSignature" Certainty="95" Level="Error" Path="D:\Bitbucket\moneytransferapp\moneytransfer_app\App\DataLayer\DataStore" File="DataStore.cs" Line="141">Убедитесь, что 'DataStore.Dispose(bool)' объявлен как защищенный, виртуальный и распечатанный.</Issue>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2017-05-02 05:59:01Z" FixCategory="Breaking">
+             <Issue Name="DisposeBoolSignature" Certainty="95" Level="Error" Path="D:\GitHub\App\App\DataLayer\DataStore" File="DataStore.cs" Line="141">Убедитесь, что 'DataStore.Dispose(bool)' объявлен как защищенный, виртуальный и распечатанный.</Issue>
             </Message>
            </Messages>
           </Member>

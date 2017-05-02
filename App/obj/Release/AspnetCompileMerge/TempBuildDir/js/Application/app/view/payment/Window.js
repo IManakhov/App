@@ -17,7 +17,8 @@
                 {
                     xtype: 'numberfield',
                     fieldLabel: 'Сумма',
-                    name: 'Amount'
+                    name: 'Amount',
+                    minValue: 0,
                 }
             ]
         }

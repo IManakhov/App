@@ -1,0 +1,21 @@
+[
+  {
+    "outputFileName": "js/Application/app-production.js",
+    "inputFiles": [
+      "js/Application/app/Enums.js",
+      "js/Application/app/Validators.js",
+      "js/Application/app/ux/**/*.js",
+      "js/Application/app/model/*.js",
+      "js/Application/app/store/*.js",
+      "js/Application/app/view/base/*.js",
+      "js/Application/app/view/**/Grid.js",
+      "js/Application/app/view/**/Tree.js",
+      "js/Application/app/view/**/Window.js",
+      "js/Application/app/view/**/Controller.js",
+      "js/Application/app/view/**/*.js",
+      "js/Application/app/Application.js",
+      "js/Application/app.js"
+    ],
+    "sourceMap": true
+  }
+]
