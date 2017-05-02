@@ -1,5 +1,5 @@
 # MTransfer App
-Sample app based on ExtJs6 + Asp .NET MVC. 
+Sample app based on **ExtJs6 + Asp .NET MVC**. 
 Application is a transfer system, that can give people functions to transfer money :moneybag: inside system.
 Main goal is showing how can create sample app using asp .net mvc + extjs6
 
