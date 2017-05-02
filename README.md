@@ -1,1 +1,5 @@
-This README would normally document whatever steps are necessary to get your application up and running.
+# MTransfer App
+Sample app based on ExtJs6 + Asp .NET MVC
+
+
+DEMO http://mtransferapp.1gb.ru/
